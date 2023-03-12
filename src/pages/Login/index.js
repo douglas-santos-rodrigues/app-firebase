@@ -41,7 +41,7 @@ export default function Login() {
         key: querySnapshot.id,
       });
       // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
+      console.log(doc.id,  "  => ", doc.data());
     });
     setLista(users);
 
