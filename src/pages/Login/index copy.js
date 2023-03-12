@@ -139,11 +139,51 @@ export default function Login() {
         placeholder="Type something"
       />
 
-  
+      <TextInput
+        value={valor}
+        onChangeText={(text) => setValor(text)}
+        style={{ width: "90%" }}
+        mode="outlined"
+        label="Valor"
+        placeholder="Type something"
+      />
+      <TextInput
+        value={descricao}
+        onChangeText={(text) => setDescricao(text)}
+        style={{ width: "90%" }}
+        mode="outlined"
+        label="Descricao"
+        placeholder="Type something"
+      />
+
+      <Button style={{ width: "90%" }} mode="contained" onPress={() => inserirDados()}>
+        Salvar
+      </Button>
+
+      <Button
+        style={{ width: "90%" }}
+        mode="contained"
+        onPress={() => cadastro()}
+      >
+        Cadatrar
+      </Button>
+
       <Button style={{ width: "90%" }} mode="contained" onPress={() => logar()}>
         Logar
       </Button>
+      <Text>Douglas Santos </Text>
 
+      <FlatList
+              data={lista}
+              renderItem={({ item }) => (
+                <View style={{ height: 50, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                  <Text>User ID: {item.id}</Text>
+                  <Text>User Name: {item.name}</Text>
+                </View>
+              )}
+              keyExtractor={item => item.id}
+
+              />
 
       
     </View>
